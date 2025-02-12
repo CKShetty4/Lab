@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int x[10],y[10],i,j,dist,ip;
+void distance()
+{
+    printf("Enter the range:- ");
+    scanf("%d",&ip);
+    printf("\t1 \t2 \t3 \t4 \t5 \t6 \t7 \t8 \t9 \t10 \n");
+    for(i=0;i<=10;i++)
+    {
+        printf("%d\t",i);
+        
+        for(j=1;j<=10;j++)
+        {
+            dist=sqrt(((x[j]-x[i])*(x[j]-x[i]))+((y[j]-y[i])*(y[j]-y[i])));
+            if(dist<ip)
+            {
+                printf("%d\t",dist);
+            }
+            else
+            {
+                printf("nir \t");
+            }
+        }
+            printf("\n");
+    }
+}
+
+int main(int argc, char** argv) {
+    for(i=0;i<10;i++)
+    {
+        x[i]=1+rand()%10;
+        y[i]=1+rand()%50;
+    }
+    for(i=0;i<10;i++)
+    {
+        printf("Co-ordinates of %d nodes are:- (%d,%d) \n",i+1,x[i],y[i]);
+    }
+    distance();
+    printf("\n nir = not in range");
+    return (EXIT_SUCCESS);
+}
