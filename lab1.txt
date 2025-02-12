@@ -35,3 +35,49 @@ data[i]=input[i]-'0';
  printf("%d\n",parity); 
  return (EXIT_SUCCESS); 
 } 
+_______________________________________________________________
+
+#include <stdio.h> 
+#define ROWS 5 
+#define COLS 5 
+void calculate_2d_parity(int data [ROWS][COLS]){ 
+ int row_parity[ROWS] = {0}; 
+ int col_parity[COLS] = {0}; 
+ 
+ for (int i=0;i< ROWS; i++){ 
+ for(int j=0;j< COLS;j++){ 
+ row_parity[i] ^=data[i][j]; 
+ } 
+ } 
+ for(int j=0;j<COLS;j++){ 
+ for(int i=0;i<ROWS;i++){ 
+ col_parity[j] ^=data[i][j]; 
+ 
+ } 
+ } 
+ printf("Data with Parities:\n"); 
+ for(int i=0;i<ROWS;i++){ 
+ for( int j=0;j<COLS;j++){ 
+ printf("%d",data[i][j]); 
+ 
+ }
+ printf("| Row parity:%d\n",row_parity[i]); 
+ 
+ } 
+ printf("Column Parities: "); 
+ for(int j=0;j<COLS;j++){ 
+ printf("%d",col_parity[j]); 
+ } 
+ printf("\n"); 
+} 
+int main() { 
+ int data [ROWS] [COLS] = { 
+ {1,0,1,1,0}, 
+ {1,1,0,1,1}, 
+ {0,1,1,0,1}, 
+ {1,0,0,1,1}, 
+ {0,1,1,0,1} 
+ }; 
+ calculate_2d_parity(data); 
+ return 0; 
+} 
