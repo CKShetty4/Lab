@@ -1,0 +1,371 @@
+Q1: What are the primary uses of computer networks?
+A: Computer networks are used for resource sharing (printers, files, databases), communication (emails, VoIP, video conferencing), distributed computing, e-commerce, and entertainment (online gaming, streaming).
+
+Q2: What are the main types of network hardware?
+A: Network hardware includes routers, switches, hubs, modems, network interface cards (NICs), and repeaters.
+
+Q3: What is the difference between network hardware and network software?
+A: Network hardware consists of physical devices like routers and switches, while network software includes protocols, network operating systems, and applications that facilitate communication.
+
+Q4: Compare OSI and TCP/IP reference models.
+A: The OSI model has 7 layers, while TCP/IP has 4. OSI provides a more theoretical approach, whereas TCP/IP is practical and widely used in real-world networking.
+
+Q5: What is network standardization, and why is it important?
+A: Network standardization ensures interoperability between devices and protocols. Organizations like IEEE, IETF, and ITU-T develop these standards.
+
+Physical Layer
+Q6: What is the difference between guided and unguided transmission media?
+A: Guided media uses physical cables (e.g., twisted pair, coaxial, fiber optic), while unguided media transmits signals through air or space (e.g., radio waves, microwaves).
+
+Q7: What are digital modulation techniques?
+A: Common techniques include Amplitude Shift Keying (ASK), Frequency Shift Keying (FSK), and Phase Shift Keying (PSK).
+
+Q8: Explain the concept of multiplexing.
+A: Multiplexing combines multiple signals into one transmission channel. Types include Time Division Multiplexing (TDM), Frequency Division Multiplexing (FDM), and Wavelength Division Multiplexing (WDM).
+
+Q9: What is the Public Switched Telephone Network (PSTN)?
+A: PSTN is the traditional circuit-switched telephone network that allows voice communication using landlines.
+
+Q10: How do mobile generations (1G, 2G, 3G) differ?
+A:
+
+1G: Analog voice transmission.
+2G: Digital voice, SMS support (GSM, CDMA).
+3G: Higher data rates, video calling, mobile internet.
+Data Link Layer (DLL)
+Q11: What are the main design issues of the Data Link Layer?
+A: Framing, error control, flow control, and addressing.
+
+Q12: What are error detection techniques?
+A: Parity bit, Checksum, and Cyclic Redundancy Check (CRC).
+
+Q13: What is the Sliding Window Protocol?
+A: A flow control mechanism where the sender can transmit multiple frames before waiting for an acknowledgment.
+
+Q14: What is Medium Access Control (MAC)?
+A: MAC determines how multiple devices share the transmission medium (e.g., CSMA/CD, CSMA/CA).
+
+Q15: What is SONET/SDH?
+A: Synchronous Optical Networking (SONET) and Synchronous Digital Hierarchy (SDH) are fiber-optic transmission standards that provide high-speed data transfer.
+
+Network Layer
+Q16: What are the main design issues of the Network Layer?
+A: Routing, addressing, congestion control, and internetworking.
+
+Q17: Differentiate between IPv4 and IPv6.
+A: IPv4 uses 32-bit addresses, while IPv6 uses 128-bit addresses, providing a larger address space and better security.
+
+Q18: What is the purpose of ARP, DHCP, and ICMP?
+A:
+
+ARP (Address Resolution Protocol): Resolves IP addresses to MAC addresses.
+DHCP (Dynamic Host Configuration Protocol): Assigns IP addresses dynamically.
+ICMP (Internet Control Message Protocol): Sends error messages and operational information.
+Q19: What is Network Address Translation (NAT)?
+A: NAT allows multiple private IP addresses to be mapped to a single public IP for internet access.
+
+Q20: Explain routing in the Internet.
+A: Uses protocols like OSPF (Interior Gateway Protocol) and BGP (Exterior Gateway Protocol) to determine optimal paths for data packets.
+
+Transport Layer
+Q21: What are the design issues of the Transport Layer?
+A: Reliability, flow control, congestion control, and multiplexing.
+
+Q22: Compare TCP and UDP.
+A:
+
+TCP: Reliable, connection-oriented, error-checked.
+UDP: Fast, connectionless, minimal overhead.
+Q23: What is congestion control in TCP?
+A: Techniques like Slow Start, Congestion Avoidance, and Fast Retransmit regulate traffic to prevent congestion.
+
+TCP Congestion Control and Resource Management
+Q24: What is the difference between flow control and congestion control?
+A: Flow control prevents sender overflow at the receiver, while congestion control prevents excessive load on the network.
+
+Q25: What is Random Early Detection (RED)?
+A: A queue management technique that drops packets randomly before congestion occurs to regulate traffic.
+
+Socket Programming
+Q26: What is the client-server model?
+A: A model where a client requests services, and a server provides them.
+
+Q27: What is the difference between TCP and UDP sockets?
+A: TCP sockets provide reliable communication, while UDP sockets offer fast, connectionless transmission.
+
+Application Layer
+Q28: What is the purpose of DNS?
+A: DNS maps domain names to IP addresses.
+
+Q29: How does HTTP work?
+A: HTTP is a request-response protocol where clients request web pages from servers.
+
+Q30: What is the difference between SMTP and FTP?
+A: SMTP is for sending emails, while FTP is for file transfers.
+
+Ad-hoc and Wireless Sensor Networks
+Q31: What is MANET?
+A: A Mobile Ad-hoc Network (MANET) is a decentralized, self-configuring network of mobile nodes.
+
+Q32: What are the challenges of wireless sensor networks (WSNs)?
+A: Limited power, security threats, and network scalability.
+
+Network Security
+Q33: What is the difference between symmetric and asymmetric encryption?
+A: Symmetric uses one key for encryption and decryption (e.g., AES), while asymmetric uses a public-private key pair (e.g., RSA).
+
+Q34: What are authentication protocols?
+A: Protocols like Kerberos and OAuth verify user identity.
+
+Q35: How is web security ensured?
+A: Using HTTPS (SSL/TLS), firewalls, and encryption techniques.
+
+Q36: What are the different types of networks based on scale?
+A: PAN (Personal Area Network), LAN (Local Area Network), MAN (Metropolitan Area Network), WAN (Wide Area Network), and the Internet.
+
+Q37: What are peer-to-peer and client-server networks?
+A:
+
+Peer-to-peer (P2P): Each node acts as both client and server, sharing resources directly.
+Client-server: Dedicated servers provide services to clients.
+Q38: What is the role of protocols in networking?
+A: Protocols define rules for data transmission, ensuring interoperability between devices. Examples: HTTP, FTP, TCP/IP.
+
+Physical Layer
+Q39: What are the advantages of fiber optic cables over copper cables?
+A: Higher bandwidth, lower signal loss, immunity to electromagnetic interference, and greater security.
+
+Q40: What is Shannon’s theorem?
+A: It defines the maximum data rate of a communication channel based on bandwidth and signal-to-noise ratio.
+
+Q41: What is the difference between FDM and TDM?
+A:
+
+FDM (Frequency Division Multiplexing): Different frequency bands are allocated to multiple signals.
+TDM (Time Division Multiplexing): Time slots are assigned to signals in a rotating manner.
+Data Link Layer (DLL)
+Q42: What is framing in the DLL?
+A: Framing organizes data into manageable units before transmission. Common techniques include bit stuffing and byte stuffing.
+
+Q43: How does CRC (Cyclic Redundancy Check) work?
+A: CRC generates a checksum using polynomial division to detect errors in transmitted data.
+
+Q44: What are the types of Medium Access Control (MAC) protocols?
+A:
+
+Contention-based (e.g., CSMA/CD, CSMA/CA)
+Controlled access (e.g., Token Ring, Polling)
+Q45: What is a virtual LAN (VLAN)?
+A: A VLAN logically segments a network, improving security and performance.
+
+Network Layer
+Q46: What is hierarchical addressing in IP?
+A: It divides an IP address into network and host portions for efficient routing.
+
+Q47: What is subnetting?
+A: Subnetting divides a larger network into smaller sub-networks for better management and security.
+
+Q48: What is CIDR (Classless Inter-Domain Routing)?
+A: CIDR replaces class-based IP addressing with flexible subnet masks to optimize address allocation.
+
+Q49: Explain the difference between static and dynamic routing.
+A:
+
+Static Routing: Manually configured routes, suitable for small networks.
+Dynamic Routing: Uses protocols like RIP, OSPF, and BGP to update routes automatically.
+Q50: What is the difference between distance vector and link-state routing?
+A:
+
+Distance Vector: Routes are determined based on hop count (e.g., RIP).
+Link-State: Each router maintains a network topology map (e.g., OSPF).
+Transport Layer
+Q51: What is the three-way handshake in TCP?
+A: The connection setup process in TCP involving:
+
+SYN (Client → Server)
+SYN-ACK (Server → Client)
+ACK (Client → Server)
+Q52: What is the significance of the TCP window size?
+A: It controls the amount of data a sender can transmit before requiring an acknowledgment, impacting flow control.
+
+Q53: What is the purpose of sequence and acknowledgment numbers in TCP?
+A: They ensure reliable, ordered delivery of data by tracking sent and received segments.
+
+Q54: How does UDP achieve faster data transmission compared to TCP?
+A: UDP is connectionless and does not perform error checking, making it faster but unreliable.
+
+TCP Congestion Control and Resource Management
+Q55: What are TCP’s congestion control mechanisms?
+A:
+
+Slow Start
+Congestion Avoidance
+Fast Retransmit
+Fast Recovery
+Q56: What is Explicit Congestion Notification (ECN)?
+A: ECN allows routers to mark packets instead of dropping them when congestion occurs, reducing packet loss.
+
+Q57: What is the purpose of Queue Management techniques like RED?
+A: RED (Random Early Detection) prevents congestion by proactively dropping packets before a queue overflows.
+
+Socket Programming
+Q58: What is a socket in networking?
+A: A socket is an endpoint for communication between two devices over a network.
+
+Q59: What are the key differences between an iterative and concurrent server?
+A:
+
+Iterative Server: Handles one client at a time.
+Concurrent Server: Uses multithreading to handle multiple clients simultaneously.
+Q60: What are the steps involved in TCP socket programming?
+A:
+
+Socket creation
+Binding
+Listening
+Accepting
+Data transfer
+Closing
+Application Layer
+Q61: What are the key components of the World Wide Web (WWW)?
+A: Web browsers, web servers, URLs, and HTTP/HTTPS.
+
+Q62: How does FTP work?
+A: FTP transfers files between client and server using separate control and data channels.
+
+Q63: What is the purpose of RTP and RTCP?
+A:
+
+RTP (Real-time Transport Protocol): Delivers real-time audio/video.
+RTCP (Real-time Transport Control Protocol): Provides feedback on transmission quality.
+Ad-hoc and Wireless Sensor Networks
+Q64: What are the differences between infrastructure and ad-hoc wireless networks?
+A:
+
+Infrastructure Network: Requires a central access point (Wi-Fi).
+Ad-hoc Network: Nodes communicate directly without fixed infrastructure (e.g., MANET).
+Q65: What are the routing challenges in MANETs?
+A: Dynamic topology, limited bandwidth, and power constraints.
+
+Q66: What is the role of energy efficiency in WSNs?
+A: Since sensor nodes are battery-powered, energy-efficient routing and communication protocols are crucial.
+
+Network Security
+Q67: What are the key goals of network security?
+A: Confidentiality, Integrity, Availability (CIA triad), Authentication, and Non-repudiation.
+
+Q68: What is the difference between hashing and encryption?
+A:
+
+Hashing: Converts data into a fixed-size hash value (e.g., SHA-256).
+Encryption: Transforms data into a secure format using keys (e.g., AES, RSA).
+Q69: What is a digital signature?
+A: A cryptographic technique that verifies the authenticity and integrity of a message.
+
+Q70: How does HTTPS enhance web security?
+A: HTTPS encrypts web traffic using SSL/TLS, preventing eavesdropping and data tampering.
+
+Introduction & Networking Basics
+LAN – Local Area Network
+WAN – Wide Area Network
+MAN – Metropolitan Area Network
+PAN – Personal Area Network
+NIC – Network Interface Card
+MAC – Media Access Control
+IP – Internet Protocol
+OSI – Open Systems Interconnection
+TCP/IP – Transmission Control Protocol / Internet Protocol
+DNS – Domain Name System
+HTTP – Hypertext Transfer Protocol
+HTTPS – Hypertext Transfer Protocol Secure
+FTP – File Transfer Protocol
+SMTP – Simple Mail Transfer Protocol
+POP3 – Post Office Protocol v3
+IMAP – Internet Message Access Protocol
+Physical Layer
+PSTN – Public Switched Telephone Network
+ISDN – Integrated Services Digital Network
+DSL – Digital Subscriber Line
+FDM – Frequency Division Multiplexing
+TDM – Time Division Multiplexing
+WDM – Wavelength Division Multiplexing
+FM – Frequency Modulation
+AM – Amplitude Modulation
+PSK – Phase Shift Keying
+FSK – Frequency Shift Keying
+ASK – Amplitude Shift Keying
+OFDM – Orthogonal Frequency Division Multiplexing
+Data Link Layer (DLL)
+CRC – Cyclic Redundancy Check
+ARQ – Automatic Repeat Request
+HDLC – High-Level Data Link Control
+PPP – Point-to-Point Protocol
+CSMA/CD – Carrier Sense Multiple Access with Collision Detection
+CSMA/CA – Carrier Sense Multiple Access with Collision Avoidance
+VLAN – Virtual Local Area Network
+SONET – Synchronous Optical Networking
+SDH – Synchronous Digital Hierarchy
+PON – Passive Optical Network
+Network Layer
+IPv4 – Internet Protocol version 4
+IPv6 – Internet Protocol version 6
+NAT – Network Address Translation
+ICMP – Internet Control Message Protocol
+ARP – Address Resolution Protocol
+RARP – Reverse Address Resolution Protocol
+DHCP – Dynamic Host Configuration Protocol
+BGP – Border Gateway Protocol
+OSPF – Open Shortest Path First
+RIP – Routing Information Protocol
+CIDR – Classless Inter-Domain Routing
+Transport Layer
+TCP – Transmission Control Protocol
+UDP – User Datagram Protocol
+RTT – Round Trip Time
+SYN – Synchronize (used in TCP handshake)
+ACK – Acknowledgment (used in TCP handshake)
+MTU – Maximum Transmission Unit
+TCP Congestion Control & Resource Management
+QoS – Quality of Service
+RED – Random Early Detection
+ECN – Explicit Congestion Notification
+DTN – Delay-Tolerant Networking
+Socket Programming
+IPC – Inter-Process Communication
+RPC – Remote Procedure Call
+Application Layer
+URL – Uniform Resource Locator
+HTML – HyperText Markup Language
+CSS – Cascading Style Sheets
+AJAX – Asynchronous JavaScript and XML
+JSON – JavaScript Object Notation
+REST – Representational State Transfer
+SOAP – Simple Object Access Protocol
+RTP – Real-time Transport Protocol
+RTCP – Real-time Transport Control Protocol
+Ad-hoc & Wireless Sensor Networks
+Wi-Fi – Wireless Fidelity
+MANET – Mobile Ad-hoc Network
+WSN – Wireless Sensor Network
+LTE – Long-Term Evolution
+4G – Fourth Generation (Mobile Network)
+5G – Fifth Generation (Mobile Network)
+TDMA – Time Division Multiple Access
+CDMA – Code Division Multiple Access
+OFDM – Orthogonal Frequency Division Multiplexing
+MIMO – Multiple Input Multiple Output
+Network Security
+SSL – Secure Sockets Layer
+TLS – Transport Layer Security
+VPN – Virtual Private Network
+IPSec – Internet Protocol Security
+AES – Advanced Encryption Standard
+RSA – Rivest-Shamir-Adleman (Encryption Algorithm)
+MD5 – Message Digest Algorithm 5
+SHA – Secure Hash Algorithm
+HTTPS – Hypertext Transfer Protocol Secure
+PGP – Pretty Good Privacy
+MITM – Man-In-The-Middle Attack
+DDoS – Distributed Denial-of-Service Attack
+IDS – Intrusion Detection System
+IPS – Intrusion Prevention System
