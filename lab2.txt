@@ -1,0 +1,97 @@
+#include <stdio.h> 
+#include <string.h> 
+// Length of the generator polynomial 
+#define N strlen(gen_poly) 
+// Data to be transmitted and received 
+char data[28]; 
+// CRC value 
+char check_value[28]; 
+// Generator polynomial 
+char gen_poly[10]; 
+// Variables 
+int data_length, i, j; 
+// Function that performs XOR operation 
+void XOR() { 
+ // If both bits are the same, the output is 0 
+ // If the bits are different, the output is 1 
+ for (j = 1; j < N; j++) 
+ check_value[j] = ((check_value[j] == gen_poly[j]) ? '0' : '1'); 
+} 
+// Function to check for errors on the receiver side 
+void receiver() { 
+ // Get the received data 
+ printf("\nEnter the received data: "); 
+ scanf("%s", data); 
+ printf("\n--- \n"); 
+ printf("Data received: %s\n", data); 
+ 
+ // Cyclic Redundancy Check 
+ crc(); 
+ 
+ // Check if the remainder is zero to find the error 
+ for (i = 0; (i < N - 1) && (check_value[i] != '1'); i++); 
+ if (i < N - 1) 
+ printf("\nError detected\n\n"); 
+ else 
+ printf("\nNo error detected\n\n"); 
+} 
+// Function to compute CRC 
+void crc() { 
+ for (i = 0; i < N; i++) 
+ check_value[i] = data[i]; 
+ do { 
+ if (check_value[0] == '1') 
+ XOR(); 
+ // Shift the bits left 
+ for (j = 0; j < N - 1; j++) 
+ check_value[j] = check_value[j + 1]; 
+ // Append a bit from data 
+ check_value[j] = data[i++]; 
+ } while (i <= data_length + N - 1); 
+ // Loop until the data ends 
+} 
+int main() { 
+ // Get the data to be transmitted
+ int f;
+ printf("\nEnter data to be transmitted: "); 
+ scanf("%s", data); 
+ //changes made
+    printf("1.CRC-8\n2.CRC-10\n3.CRC-16\n4.CRC-32\nSelect polynomial from above");
+    scanf("%d",&f);
+    switch(f)
+    {
+        case 1:strcpy(gen_poly,"101100111");
+        break;
+        case 2:strcpy(gen_poly,"11000110101");
+        break;
+        case 3:strcpy(gen_poly,"10001000000100001");
+        break;
+        case 4:strcpy(gen_poly,"100000100110000010001110110110111");
+        break;
+        default:printf("Wrong Choice");
+    }
+  //changes made
+ data_length = strlen(data); 
+// Append n-1 zeros to the data 
+ for (i = data_length; i < data_length + N - 1; i++) 
+ data[i] = '0'; 
+ data[i] = '\0'; // Null-terminate the string 
+ printf("\n-----------------------------------------------------"); 
+ // Print the data with padded zeros 
+ printf("\nData padded with n-1 zeros: %s", data); 
+ printf("\n------------------------------------------------------"); 
+ // Cyclic Redundancy Check 
+ crc(); 
+ // Print the computed check value 
+ printf("\nCRC or Check value is: %s", check_value); 
+ // Append data with check value (CRC) 
+ for (i = data_length; i < data_length + N - 1; i++) 
+ data[i] = check_value[i - data_length]; 
+ data[i] = '\0'; // Null-terminate the string 
+ printf("\n--------------------------------------------------------"); 
+ printf("\nFinal data to be sent: %s", data); 
+ printf("\n--------------------------------------------------------"); 
+ // Receiver function to check for errors 
+ receiver(); 
+ return 0; 
+} 
