@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    int arq, n, f;
+    printf("Select ARQ Protocol:\n1. Stop-and-Wait\n2. Go-Back-N\n3. Selective Repeat\n");
+    scanf("%d", &arq);
+
+    switch(arq) {
+        case 1: {
+            printf("Enter the length of the data\n");
+            scanf("%d", &n);
+            int data[n], ack[n];
+            for(int i = 0; i < n; i++) {
+                ack[i] = 0;
+            }
+            printf("Enter the data\n");
+            for(int i = 0; i < n; i++) {
+                scanf("%d", &data[i]);
+                if(data[i] == (i + 1) && ack[i] == 0) {
+                    ack[i] = 1;
+                    printf("The data received is correct\n");
+                } else {
+                    printf("The data received is incorrect\n");
+                }
+            }
+            break;
+        }
+        case 2: {
+            printf("Enter the length of the data\n");
+            scanf("%d", &n);
+            printf("Enter the length of the frame\n");
+            scanf("%d", &f);
+            int data[n], ack[n];
+            for(int i = 0; i < n; i++) {
+                ack[i] = 0;
+            }
+            int p = 0;
+            printf("Enter the data\n");
+            for(int i = 0 + p; i < n;) {
+                scanf("%d", &data[i]);
+                if(data[i] == (i + 1) && ack[i] == 0) {
+                    ack[i] = 1;
+                    i++;
+                } else if(data[i] == (i + 1) && ack[i] != 0) {
+                    printf("The data received is duplicate\n");
+                } else {
+                    printf("The data should be re-transmitted from %d\n", i);
+                    p = i;
+                }
+            }
+            break;
+        }
+        case 3: {
+            printf("Enter the length of the data\n");
+            scanf("%d", &n);
+            printf("Enter the length of the frame\n");
+            scanf("%d", &f);
+            int data[n], ack[n];
+            for(int i = 0; i < n; i++) {
+                ack[i] = 0;
+            }
+            printf("Enter the data\n");
+            for(int i = 0; i < n; i++) {
+                scanf("%d", &data[i]);
+            }
+            for(int j = 0; j < n; j = j + f) {
+                for(int i = 0; i < f && (i + j) < n; i++) {
+                    if(data[i + j] == (i + j + 1) && ack[i + j] == 0) {
+                        ack[i + j] = 1;
+                        printf("Ack received for %d\n", i + j + 1);
+                    } else if(ack[i + j] == 0) {
+                        printf("NACK for %d\n", i + j + 1);
+                    }
+                }
+            }
+            break;
+        }
+        default:
+            printf("Invalid choice\n");
+            break;
+    }
+    return (EXIT_SUCCESS);
+}
