@@ -41,3 +41,51 @@ int main(int argc, char** argv) {
     printf("\n nir = not in range");
     return (EXIT_SUCCESS);
 }
+
+_______________________________________________
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int x[10], y[10], i, j, dist, ip;
+
+void distance() {
+    printf("Enter the range: ");
+    scanf("%d", &ip);
+
+    printf("\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\n");
+    
+    for(i = 0; i < 10; i++) {
+        printf("%d\t", i + 1);
+        
+        for(j = 0; j < 10; j++) {
+            if (i == j) { 
+                printf("-\t");  // Avoid self-comparison
+            } else {
+                dist = sqrt(pow(x[j] - x[i], 2) + pow(y[j] - y[i], 2));
+                if(dist < ip) {
+                    printf("%d\t", dist);
+                } else {
+                    printf("nir\t");
+                }
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    for(i = 0; i < 10; i++) {
+        x[i] = 1 + rand() % 10;
+        y[i] = 1 + rand() % 50;
+    }
+
+    for(i = 0; i < 10; i++) {
+        printf("Co-ordinates of %d node: (%d, %d)\n", i + 1, x[i], y[i]);
+    }
+
+    distance();
+
+    printf("\nnir = not in range\n");
+    return 0;
+}
